@@ -10,10 +10,13 @@
 
 #### Для начала работы
 
-1. ```clone this repo```
-2. ```cd path/to/...```
-3. ```npm install gulpjs/gulp-cli -g```  
-> Установка последней версии Gulp CLI tools глобально (подробнее - [GitHub](https://github.com/gulpjs/gulp/blob/4.0/docs/getting-started.md) )
+> Должна быть установлена последняя версия Gulp CLI tools глобально (подробнее - [GitHub](https://github.com/gulpjs/gulp/blob/4.0/docs/getting-started.md) )
 
-4. ```npm install```
-6. ```run gulp``` 
+1. ```git clone <this repo>```
+2. ```yarn init -y```
+3. ```yarn install```
+4. ```git add .```
+5. ```git commit -m```
+6. ```git remote set-url origin <new repo>```
+7. ```git remote -v```
+8. ```git push -u origin master```
