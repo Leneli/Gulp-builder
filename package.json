@@ -21,7 +21,7 @@
 		"gulp-babel": "latest",
 		"gulp-cheerio": "latest",
 		"gulp-concat": "latest",
-		"gulp-concat-css": "latest0",
+		"gulp-concat-css": "latest",
 		"gulp-csso": "latest",
 		"gulp-eslint": "latest",
 		"gulp-imagemin": "latest",
