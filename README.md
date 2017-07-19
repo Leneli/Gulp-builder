@@ -15,3 +15,9 @@
 7. ```git remote set-url origin <new repo>```
 8. ```git remote -v```
 9. ```git push -u origin master```
+
+> #### Примечания
+> 1. при ошибке 
+>	Error: ENOENT: no such file or directory, open **\node_modules\svgo\.svgo.yml**
+> выполнить
+>	**yarn upgrade svgo**

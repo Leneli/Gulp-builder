@@ -3,7 +3,7 @@
 module.exports = function() {
 	$.gulp.task("sass", function() {
 
-        var processors = [
+		var processors = [
 			$.autoprefixer({
 				browsers: "last 1 version"
 			}),
@@ -25,7 +25,7 @@ module.exports = function() {
 
 		return $.gulp.src("./source/style/app.scss")
 			.pipe($.gp.sourcemaps.init())
-            .pipe($.gp.sassGlob())
+			.pipe($.gp.sassGlob())
 			.pipe($.gp.sass()).on("error", $.gp.notify.onError({ title: "Style" }))
 			.pipe($.postcss(processors))
 			.pipe($.gp.sourcemaps.write("."))

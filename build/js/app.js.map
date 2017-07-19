@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.js"],"names":["setTimeout","document","querySelector","classList","add"],"mappings":"aACCA,WAAA,WAGCC,SAASC,cAAc,qBAAqBC,UAAUC,IAAI,YAD3DJ","file":"app.js","sourcesContent":["(function() {\r\n\t\"use strict\";\r\n\r\n\tsetTimeout(function() {\r\n\t\tdocument.querySelector(\".greating_picture\").classList.add(\"m--show\");\r\n\t}, 1000);\r\n})();"]}

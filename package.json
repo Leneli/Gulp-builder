@@ -42,6 +42,7 @@
 	},
 	"dependencies": {
 		"jquery": "latest",
-		"normalize.css": "latest"
+		"normalize.css": "latest",
+		"svgo": "latest"
 	}
 }
