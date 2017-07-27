@@ -12,11 +12,12 @@
 // https://fonts.google.com/
 // https://www.fontsquirrel.com/tools/webfont-generator - generator for font formats
 
+// common mixin, for new browsers
 @mixin font(
 			$family,
+			$src,
 			$weight: normal,
-			$style: normal,
-			$src...
+			$style: normal
 	) {
 	@font-face {
 		font: {
@@ -24,16 +25,122 @@
 			weight: $weight;
 			style: $style;
 		}
-		src: $src;
+		src: url($src + ".woff2") format("woff2"),
+			 url($src + ".woff") format("woff");
+	}
+}
+// common mixin, for old browsers
+@mixin fontOld(
+			$family,
+			$src,
+			$weight: normal,
+			$style: normal
+	) {
+	@font-face {
+		font: {
+			family: $family;
+			weight: $weight;
+			style: $style;
+		}
+		src: url($src + ".eot"); /* IE9 Compat Modes */
+		src: url($src + ".eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+			 url($src + ".woff2") format("woff2"), /* Super Modern Browsers */
+			 url($src + ".woff") format("woff"), /* Pretty Modern Browsers */
+			 url($src + ".ttf")  format("truetype"), /* Safari, Android, iOS */
+			 url($src + ".svg#svgFontName") format("svg"); /* Legacy iOS */
 	}
 }
 
+//mixin for font with different styles (regular, bold, italic, bold-italic), for new browsers
+@mixin fontRbi(
+			$family,
+			$src
+	) {
+	@font-face {
+		font: {
+			family: $family;
+			weight: normal;
+			style: normal;
+		}
+		src: url($src + "_Regular.woff2") format("woff2"),
+			 url($src + "_Regular.woff") format("woff");
+	}
+	@font-face {
+		font: {
+			family: $family;
+			weight: normal;
+			style: italic;
+		}
+		src: url($src + "_Italic.woff2") format("woff2"),
+			 url($src + "_Italic.woff") format("woff");
+	}
+	@font-face {
+		font: {
+			family: $family;
+			weight: bold;
+			style: normal;
+		}
+		src: url($src + "_Bold.woff2") format("woff2"),
+			 url($src + "_Bold.woff") format("woff");
+	}
+	@font-face {
+		font: {
+			family: $family;
+			weight: bold;
+			style: italic;
+		}
+		src: url($src + "_BoldItalic.woff2") format("woff2"),
+			 url($src + "_BoldItalic.woff") format("woff");
+	}
+}
+//mixin for font with different styles(regular, bold, italic, bold-italic), for new browsers
+@mixin fontRbiOld(
+			$family,
+			$src
+	) {
+	@font-face {
+		font-family: $family + "Regular";
+		src: url($src + "_Regular.eot"); /* IE9 Compat Modes */
+		src: url($src + "_Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+			 url($src + "_Regular.woff2") format("woff2"), /* Super Modern Browsers */
+			 url($src + "_Regular.woff") format("woff"), /* Pretty Modern Browsers */
+			 url($src + "_Regular.ttf")  format("truetype"), /* Safari, Android, iOS */
+			 url($src + "_Regular.svg#svgFontName") format("svg"); /* Legacy iOS */
+	}
+	@font-face {
+		font-family: $family + "Italic";
+		src: url($src + "_Italic.eot"); /* IE9 Compat Modes */
+		src: url($src + "_Italic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+			 url($src + "_Italic.woff2") format("woff2"), /* Super Modern Browsers */
+			 url($src + "_Italic.woff") format("woff"), /* Pretty Modern Browsers */
+			 url($src + "_Italic.ttf")  format("truetype"), /* Safari, Android, iOS */
+			 url($src + "_Italic.svg#svgFontName") format("svg"); /* Legacy iOS */
+	}
+	@font-face {
+		font-family: $family + "Bold";
+		src: url($src + "_Bold.eot"); /* IE9 Compat Modes */
+		src: url($src + "_Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+			 url($src + "_Bold.woff2") format("woff2"), /* Super Modern Browsers */
+			 url($src + "_Bold.woff") format("woff"), /* Pretty Modern Browsers */
+			 url($src + "_Bold.ttf")  format("truetype"), /* Safari, Android, iOS */
+			 url($src + "_Bold.svg#svgFontName") format("svg"); /* Legacy iOS */
+	}
+	@font-face {
+		font-family: $family + "BoldItalic";
+		src: url($src + "_BoldItalic.eot"); /* IE9 Compat Modes */
+		src: url($src + "_BoldItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+			 url($src + "_BoldItalic.woff2") format("woff2"), /* Super Modern Browsers */
+			 url($src + "_BoldItalic.woff") format("woff"), /* Pretty Modern Browsers */
+			 url($src + "_BoldItalic.ttf")  format("truetype"), /* Safari, Android, iOS */
+			 url($src + "_BoldItalic.svg#svgFontName") format("svg"); /* Legacy iOS */
+	}
+}
 
 // LOCAL FONTS
 // Commonly used font stacks
 // - serif
 %times       { font-family: "Times New Roman", Times, serif; }
-%georgia     { font-family: Georgia, 'Times New Roman', Times, serif; }
+%georgia     { font-family: Georgia, "Times New Roman", Times, serif; }
 %baskerville { font-family: Baskerville, "Palatino Linotype", Times, serif; }
 %hoefler     { font-family: "Hoefler Text", Garamond, Times, serif; }
 // - sans-serif
