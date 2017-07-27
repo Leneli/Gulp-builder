@@ -1,0 +1,61 @@
+// WEB FONTS
+
+// Fonts format (consistency is important):
+// - for old browsers: .eot, .woff2, .woff, .ttf, .svg
+// - for new browsers: .woff2, .woff
+
+//Resources:
+// https://www.theleagueofmoveabletype.com/
+// https://exljbris.com/
+// https://fontlibrary.org/
+// https://www.fontsquirrel.com/
+// https://fonts.google.com/
+// https://www.fontsquirrel.com/tools/webfont-generator - generator for font formats
+
+@mixin font(
+			$family,
+			$weight: normal,
+			$style: normal,
+			$src...
+	) {
+	@font-face {
+		font: {
+			family: $family;
+			weight: $weight;
+			style: $style;
+		}
+		src: $src;
+	}
+}
+
+
+// LOCAL FONTS
+// Commonly used font stacks
+// - serif
+%times       { font-family: "Times New Roman", Times, serif; }
+%georgia     { font-family: Georgia, 'Times New Roman', Times, serif; }
+%baskerville { font-family: Baskerville, "Palatino Linotype", Times, serif; }
+%hoefler     { font-family: "Hoefler Text", Garamond, Times, serif; }
+// - sans-serif
+%arial       { font-family: Arial, Helvetica, sans-serif; }
+%verdana     { font-family: Verdana, Arial, Helvetica, sans-serif; }
+%geneva      { font-family: Geneva, Arial, Helvetica, sans-serif; }
+%tahoma      { font-family: Tahoma, "Lucida Grande", Arial, sans-serif; }
+%trebuchet   { font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
+%gothic      { font-family: "Century Gothic", "Gill Sans", Arial, sans-serif; }
+// - monospace
+%courier     { font-family: "Courier New", Courier, monospace; }
+%monaco      { font-family: Monaco, "Lucoda Console", monospace; }
+%copperplate { font-family: "Copperplate Light", "Copperplate Gothic Light", serif; }
+%fantasy     { font-family: "Marker Felt", "Comic Sans MS", fantasy; }
+
+
+// FONTS WEIGHT & STYLE
+%ultra-light { font-weight: 200; }
+%light       { font-weight: 300; }
+%normal      { font-weight: 400; }
+%semi-bold   { font-weight: 600; }
+%bold        { font-weight: 700; }
+%ultra-bold  { font-weight: 900; }
+%italic      { font-style: italic; }
+%regular     { font-style: normal; @extend %normal; }

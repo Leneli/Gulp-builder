@@ -1,5 +1,14 @@
-body {
-  margin: 0;
-}
+// Import individual files
+// the sequence is important
+@import "_helpers/_var";
+@import "_helpers/fonts";
+@import "_helpers/mixins";
+@import "_helpers/media";
+@import "_helpers/global";
+@import "_helpers/helpercls";
 
-@import 'common/greating';
+
+// Import all files from a folder
+// the sequence is not important
+@import "common/**/*.scss";
+@import "blocks/**/*.scss";

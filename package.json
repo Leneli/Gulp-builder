@@ -44,5 +44,7 @@
 		"jquery": "latest",
 		"normalize.css": "latest",
 		"svgo": "latest"
-	}
+	},
+	"main": "index.js",
+	"repository": "https://github.com/Leneli/Gulp-builder.git"
 }

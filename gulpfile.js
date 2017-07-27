@@ -11,11 +11,11 @@ global.$ = {
 	},
 	gulp: require("gulp"),
 	del: require("del"),
-    sassGlob: require("gulp-sass-glob"),
-    postcss: require("gulp-postcss"),
-    pxtorem: require("postcss-pxtorem"),
-    autoprefixer: require("autoprefixer"),
-    cssnano: require("cssnano"),
+	sassGlob: require("gulp-sass-glob"),
+	postcss: require("gulp-postcss"),
+	pxtorem: require("postcss-pxtorem"),
+	autoprefixer: require("autoprefixer"),
+	cssnano: require("cssnano"),
 	browserSync: require("browser-sync").create(),
 	gp: require("gulp-load-plugins")()
 };
