@@ -17,7 +17,8 @@ global.$ = {
 	autoprefixer: require("autoprefixer"),
 	cssnano: require("cssnano"),
 	browserSync: require("browser-sync").create(),
-	gp: require("gulp-load-plugins")()
+	gp: require("gulp-load-plugins")(),
+	fs: require("fs")
 };
 
 $.path.task.forEach(function(taskPath) {

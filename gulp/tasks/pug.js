@@ -1,15 +1,20 @@
 "use strict";
 
-module.exports = function() {
-	$.gulp.task("pug", function() {
+const fs = require("fs");
+module.exports = function () {
+	$.gulp.task("pug", function () {
 		return $.gulp.src("./source/template/pages/*.pug")
-			.pipe($.gp.pug({ pretty: true }))
-			.on("error", $.gp.notify.onError(function(error) {
+			.pipe($.gp.plumber())
+			.pipe($.gp.pug({
+				pretty: "\t",
+				locals: JSON.parse(fs.readFileSync("./content.json", "utf8"))
+			}))
+			.on("error", $.gp.notify.onError(function (error) {
 				return {
 					title: "Pug",
-					message:  error.message
+					message: error.message
 				}
-			 }))
+			}))
 			.pipe($.gulp.dest($.config.root));
 	});
 };
